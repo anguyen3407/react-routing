@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import Product from './Product/Product';
 import ShoppingCart from 'react-icons/lib/fa/shopping-cart';
 
 import './Cart.css';
+
 
 class Cart extends Component {
   constructor() {
@@ -47,9 +48,12 @@ class Cart extends Component {
           <div id="Cart__details">
             { swagComponents }
           </div>
-          <div id="Cart__footer" onClick={ this.toggleCartDetails }>
-            <span> Checkout </span>
-          </div>
+       
+          <Link to="/checkout" id="Cart__navLink">
+  <div id="Cart__footer" onClick={ this.toggleCartDetails }>
+    <span> Checkout </span>
+  </div>
+</Link>
         </div>
       :
         <div id="Cart__container" onClick={ this.toggleCartDetails }>
